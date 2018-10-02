@@ -1,0 +1,47 @@
+package triangleProject;
+
+import java.util.Scanner;
+
+public class TriangleProject07TryCatch {
+
+	public static void main(String[] args) {
+		Scanner keyboard = new Scanner(System.in);
+		int sizeOfTriangle = 0;
+		int flag = 0;
+		
+do {
+			
+		    try {
+		    	System.out.println("Welcome to the triangle maker! Please Enter the size of the triangle in whole numbers");
+
+				keyboard = new Scanner(System.in);
+				sizeOfTriangle = -(keyboard.nextInt()); 
+		    }
+		    catch(Exception e){
+		    	
+		    	System.out.println("Wrong type input, please run the program again.");
+		    	System.exit(0);
+		    	
+		    }
+			
+			flag = sizeOfTriangle;
+
+			//to stop
+			if(flag == 0) {
+				System.out.println("Goodbye!");
+				break;
+			}
+		
+		
+		for(int i = sizeOfTriangle; i < Math.abs(sizeOfTriangle); i++)
+		{
+		    for(int j = Math.abs(sizeOfTriangle+Math.abs(i)); j > 0; j--)
+		    {
+		        System.out.print("*");
+		    }
+		    System.out.println("");
+		}
+} while(flag == 1);
+keyboard.close();
+}
+}
